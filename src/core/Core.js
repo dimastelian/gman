@@ -7,6 +7,11 @@
 
     class Core {
 
+        constructor()
+        {
+            this.core_path = 'src/core';
+        }
+
         get require()
         {
             return util.require
@@ -22,7 +27,7 @@
 
         core(module)
         {
-            return this.require('src/core/'+module);
+            return require(path.join(this.core_path,module));
         }
 
         initCustomApp(name, app_path, modules)
@@ -57,7 +62,7 @@
 
                         case 'controllers':
                             self.controllers = (loadModule) => {
-                                return R.require(path.join(app_path, 'src/controllers', loadModule || '/'));
+                                return R.require(path.join(app_path, 'controllers', loadModule || '/'));
                             }
                             break;
 

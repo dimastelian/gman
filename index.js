@@ -1,9 +1,16 @@
 ;(function() {
     'use strict';
 
-    if(!global.R)
-        global.R = require('./src/core/Core');
+    const Core = require('./src/core/Core');
+    const path = require('path');
 
-    module.exports = R;
+    if(!global.R)
+        global.R = new Core.Class();
+
+    global.R.core_path = path.join(__dirname, 'src/core');
+
+    module.exports = {
+        Core: Core,
+    };
 
 }());
