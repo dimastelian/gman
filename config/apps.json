@@ -1,0 +1,11 @@
+{
+    "web": {
+        "name": "web",
+        "description": "Basic Express Web Server",
+        "path": "apps/web"
+    },
+    "csbot": {
+        "name": "CS Bot",
+        "description": "CS Bot App"
+    }
+}
