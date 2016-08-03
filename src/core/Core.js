@@ -30,9 +30,12 @@
             return require(path.join(this.core_path,module));
         }
 
-        initCustomApp(name, app_path, modules)
+        initApp(name, app_path, modules)
         {
             var self = this;
+
+            if(!modules)
+                modules = this.modules.min;
 
             _.forEach(modules, function(module){
 
@@ -93,11 +96,6 @@
                 }
 
             });
-        }
-
-        initApp(name, app_path)
-        {
-            this.initCustomApp(name, app_path, this.modules.all)
         }
     }
 
